@@ -16,14 +16,16 @@ class Banner extends Component {
   };
 
   componentDidMount() {
+    let randomIndex = (Math.random() * 30).toFixed(0);
     unsplash.search
-      .photos("asia", 1, 10, { orientation: "landscape" })
+      .photos("asia", 1, 30, { orientation: "landscape" })
       .then(toJson)
       .then(json => {
-        console.log(json.results[0]);
+        console.log(json.results);
+        console.log(json.results[randomIndex]);
         this.setState(
           {
-            bannerImage: json.results[0]
+            bannerImage: json.results[randomIndex]
           },
           this.setBannerImage
         );
@@ -31,10 +33,9 @@ class Banner extends Component {
   }
 
   setBannerImage = e => {
-    console.log(this.bannerImageUrl);
     this.setState({
       bannerImageUrl: this.state.bannerImage.urls.regular,
-      bannerImageDesc: this.state.bannerImage.description
+      bannerImageDesc: this.state.bannerImage.alt_description
     });
   };
 

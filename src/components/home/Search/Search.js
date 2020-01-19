@@ -60,7 +60,7 @@ class Search extends Component {
             >
               <Result
                 src={searchResult.urls.regular}
-                alt={searchResult.description}
+                alt={searchResult.alt_description}
               />
             </li>
           ))}
