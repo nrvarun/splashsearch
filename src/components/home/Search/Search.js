@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Unsplash, { toJson } from "unsplash-js";
 
 import searchIcon from "../../../assets/icons/search.svg";
-import { accessToken } from "../../global/Unsplash";
+import { accessToken } from "../../../Utils/Unsplash";
 
 const unsplash = new Unsplash({
   accessKey: accessToken

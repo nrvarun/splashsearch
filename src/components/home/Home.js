@@ -3,12 +3,8 @@ import React, { Component } from "react";
 import Banner from "./Banner";
 import Layout from "../global/Layout";
 import Listing from "./Listing";
-import Unsplash, { toJson } from "unsplash-js";
-import { accessToken } from "../global/Unsplash";
-
-const unsplash = new Unsplash({
-  accessKey: accessToken
-});
+import { toJson } from "unsplash-js";
+import { unsplashGlobal } from "../../Utils/Unsplash";
 
 class Home extends Component {
   state = {
@@ -35,7 +31,7 @@ class Home extends Component {
   }
 
   searchPhotos = query => {
-    unsplash.search
+    unsplashGlobal.search
       .photos(query, 1, 30)
       .then(toJson)
       .then(json => {

@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 
-import Unsplash, { toJson } from "unsplash-js";
+import { toJson } from "unsplash-js";
 
 import Header from "./Header";
-import { accessToken } from "./Unsplash";
-
-const unsplash = new Unsplash({
-  accessKey: accessToken
-});
+import { unsplashGlobal } from "../../Utils/Unsplash";
 
 class Layout extends Component {
   state = {
@@ -19,7 +15,7 @@ class Layout extends Component {
   componentDidMount() {
     let randomIndex = (Math.random() * 30).toFixed(0);
     console.log(randomIndex);
-    unsplash.search
+    unsplashGlobal.search
       .photos("tranquil", 1, 30, { orientation: "landscape" })
       .then(toJson)
       .then(json => {
