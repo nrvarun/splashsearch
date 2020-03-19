@@ -10,7 +10,6 @@ const Listing = props => {
         {results.map(searchResult => (
           <li
             className="search-result-grid"
-            data-emergence="hidden"
             key={searchResult.id}
             height={`${searchResult.height / 5}px`}
           >

@@ -1,13 +1,6 @@
 import React, { Component } from "react";
 
-import Unsplash, { toJson } from "unsplash-js";
-
 import searchIcon from "../../../assets/icons/search.svg";
-import { accessToken } from "../../../Utils/Unsplash";
-
-const unsplash = new Unsplash({
-  accessKey: accessToken
-});
 
 class Search extends Component {
   handleSearch = e => {
@@ -27,7 +20,7 @@ class Search extends Component {
             </p>
           </div>
           <label htmlFor="search-input" className="w-100 position-relative">
-            <img className="search-input__icon" src={searchIcon} />
+            <img className="search-input__icon" src={searchIcon} alt="search" />
             <input
               type="text"
               autoComplete="off"
