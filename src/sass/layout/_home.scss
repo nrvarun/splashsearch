@@ -1,0 +1,7 @@
+.search-listing {
+  padding: 30px;
+
+  @media (min-width: $screen-lg) {
+    padding: 50px 40px;
+  }
+}
