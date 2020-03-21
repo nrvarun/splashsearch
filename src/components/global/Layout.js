@@ -45,7 +45,7 @@ class Layout extends Component {
         className="main-bgimg"
         style={{ backgroundImage: `url("${bannerImageUrl}")` }}
       >
-        <Header />
+        <Header handleSearch={this.handleSearch} />
         {this.props.children}
       </main>
     );

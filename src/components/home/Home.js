@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 
+import { toJson } from "unsplash-js";
+
 import Banner from "./Banner";
 import Layout from "../global/Layout";
 import Listing from "./Listing";
-import { toJson } from "unsplash-js";
 import { unsplashGlobal } from "../../Utils/Unsplash";
 
 class Home extends Component {
   state = {
+    searchQuery: "random",
     searchResults: [],
     randomResults: [
       "travel",
@@ -47,15 +49,18 @@ class Home extends Component {
   };
 
   handleSearch = e => {
-    const phrase = e.target.value;
-    if (phrase.length < 1) {
+    const searchQuery = e.target.value;
+    console.log(searchQuery);
+    if (searchQuery.length < 1) {
+      this.setState({ searchQuery });
       this.searchPhotos(
         this.state.randomResults[
           (Math.random() * this.state.randomResults.length).toFixed(0)
         ]
       );
     } else {
-      this.searchPhotos(phrase);
+      console.log("lets change images");
+      this.searchPhotos(searchQuery);
     }
   };
 
@@ -64,7 +69,7 @@ class Home extends Component {
 
     return (
       <Layout>
-        <Banner />
+        <Banner handleSearch={this.handleSearch} />
         <Listing results={searchResults} />
       </Layout>
     );

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-
-import cameraIcon from "../../assets/icons/camera.svg";
 import gsap from "gsap";
 
-const Header = () => {
+import cameraIcon from "../../assets/icons/camera.svg";
+
+const Header = props => {
   useEffect(() => {
     const logoIcon = document.querySelector(".header img");
     const nav = document.querySelector(".header nav");
@@ -14,22 +14,28 @@ const Header = () => {
     });
 
     headerTimeline
-      .fromTo(logoIcon, { y: 10, autoAlpha: 0 }, { y: 0, autoAlpha: 1 })
-      .fromTo(nav, { autoAlpha: 0 }, { autoAlpha: 1 }, "-=0.5");
+      .fromTo(logoIcon, { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1 })
+      .fromTo(nav, { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1 }, "-=0.5");
 
     headerTimeline.play();
-  });
+  }, []);
 
   return (
     <header className="header">
-      <img src={cameraIcon} alt="logo" />
-      <nav className="header-nav">
-        <ul className="nav-list">
-          <li>
-            <p className="m-0">Home</p>
-          </li>
-        </ul>
-      </nav>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-3 d-flex align-items-center">
+            <img src={cameraIcon} alt="logo" />
+            <nav className="header-nav">
+              <ul className="nav-list">
+                <li>
+                  <p className="m-0">Home</p>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
     </header>
   );
 };

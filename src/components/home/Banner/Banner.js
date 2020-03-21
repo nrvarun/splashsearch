@@ -5,7 +5,7 @@ import Search from "../Search/Search";
 const Banner = props => {
   return (
     <section className="home-banner">
-      <Search />
+      <Search handleSearch={props.handleSearch} />
     </section>
   );
 };

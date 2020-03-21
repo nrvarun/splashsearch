@@ -1,5 +1,6 @@
 .search-listing {
   padding: 30px;
+  z-index: 6;
 
   @media (min-width: $screen-lg) {
     padding: 50px 40px;
