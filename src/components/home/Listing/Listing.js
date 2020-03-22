@@ -11,7 +11,10 @@ const Listing = props => {
           <li
             className="search-result-grid"
             key={result.id}
-            // style={{ height: result.height / 6 }}
+            style={{
+              minHeight: result.height / 6,
+              backgroundColor: result.color
+            }}
           >
             <ListingItem item={result} />
           </li>
