@@ -7,16 +7,13 @@ const Listing = props => {
   return (
     <section className="search-listing">
       <ul className="search-results">
-        {results.map(searchResult => (
+        {results.map(result => (
           <li
             className="search-result-grid"
-            key={searchResult.id}
-            height={`${searchResult.height / 5}px`}
+            key={result.id}
+            // style={{ height: result.height / 6 }}
           >
-            <ListingItem
-              src={searchResult.urls.regular}
-              alt={searchResult.alt_description}
-            />
+            <ListingItem item={result} />
           </li>
         ))}
       </ul>
