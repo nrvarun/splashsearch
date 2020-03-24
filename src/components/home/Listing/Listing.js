@@ -12,7 +12,7 @@ const Listing = props => {
             className="search-result-grid"
             key={result.id}
             style={{
-              minHeight: result.height / 6,
+              minHeight: 400,
               backgroundColor: result.color
             }}
           >

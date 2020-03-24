@@ -2,11 +2,7 @@ import React, { useState } from "react";
 import { DownloadIcon, LikeIcon } from "../../global/Icons";
 
 const ListingItem = ({ item }) => {
-  console.log(item.width, item.height);
-
   const aspectRatio = Number((item.width / item.height).toFixed(1));
-
-  console.log(aspectRatio);
 
   const [imageLoaded, setImageLoad] = useState(false);
 

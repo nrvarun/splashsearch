@@ -13,14 +13,12 @@ class Layout extends Component {
   };
 
   componentDidMount() {
-    let randomIndex = (Math.random() * 30).toFixed(0);
+    let randomIndex = (Math.random() * 20).toFixed(0);
     console.log(randomIndex);
     unsplashGlobal.search
-      .photos("tranquil", 1, 30, { orientation: "landscape" })
+      .photos("latest", 1, 20, { orientation: "landscape" })
       .then(toJson)
       .then(json => {
-        console.log(json.results);
-        console.log(json.results[randomIndex]);
         this.setState(
           {
             bannerImage: json.results[randomIndex]

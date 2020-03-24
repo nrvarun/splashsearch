@@ -38,7 +38,7 @@ class Home extends Component {
       .then(toJson)
       .then(json => {
         // Your code
-        console.log(json.results);
+        console.log(json);
         const results = json.results;
         if (results.length) {
           this.setState({
