@@ -203,3 +203,15 @@
     }
   }
 }
+
+.search-load-more {
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  background-color: transparentize($color: #000000, $amount: 0.2);
+  text-align: center;
+  text-transform: capitalize;
+}
