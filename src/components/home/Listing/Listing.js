@@ -1,6 +1,5 @@
 import React from "react";
 import ListingItem from "./ListingItem";
-import { FixedSizeGrid } from "react-window";
 
 const Listing = props => {
   const { results, keyword } = props;
