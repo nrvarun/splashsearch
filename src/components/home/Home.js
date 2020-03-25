@@ -43,7 +43,7 @@ class Home extends Component {
       },
       () => {
         unsplashGlobal.search
-          .photos(query, page, 9)
+          .photos(query, page, 30)
           .then(toJson)
           .then(json => {
             // Your code
